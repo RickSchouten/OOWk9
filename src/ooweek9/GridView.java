@@ -19,13 +19,13 @@ import javax.swing.JPanel;
  */
 public class GridView extends JPanel implements Grid
 {
-	private BufferedImage gridImage;
+    private BufferedImage gridImage;
     private WritableRaster gridRaster;
     
     
     private int gridWidth, gridHeight;
     
-    private static final int REPAINT_NUMBER = 2000;;
+    private static final int REPAINT_NUMBER = 2000;
     private int nrOfPixelsSet;
     
     /**
@@ -36,15 +36,15 @@ public class GridView extends JPanel implements Grid
     public GridView (int width, int height) {
     	gridWidth = width;
     	gridHeight = height;
-		gridImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-		gridRaster = gridImage.getRaster();
+        gridImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+	gridRaster = gridImage.getRaster();
         setSize(width,height);
     }
     
     @Override
     public void paintComponent ( Graphics g ) {
     	super.paintComponent(g);
-		g.drawImage(gridImage, 0, 0, null);
+	g.drawImage(gridImage, 0, 0, null);
     }
     
     /**
@@ -58,8 +58,8 @@ public class GridView extends JPanel implements Grid
         gridRaster.setPixel (x, y, rgb);
         nrOfPixelsSet++;
         if (nrOfPixelsSet > REPAINT_NUMBER) {
-        	nrOfPixelsSet = 0;
-        	repaint ();
+            nrOfPixelsSet = 0;
+            repaint ();
         }
     }
 
