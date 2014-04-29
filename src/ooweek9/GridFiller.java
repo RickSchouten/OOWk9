@@ -20,7 +20,7 @@ public class GridFiller {
      * @param grid to be filled
      */
     public GridFiller (Grid grid) {
-    	colorTable = new ColorTable (514);
+    	colorTable = new ColorTable (1024);
         this.grid = grid;
     }
 
@@ -43,13 +43,13 @@ public class GridFiller {
     private int mandelNumber(double a, double b){
         int mandel = 0;
         double x = a, y = b;
-        while(x*x + y*y <= 4 && mandel <= 1024){
+        while(x*x + y*y <= 4 && mandel < 1024){
             double xnext = x*x - y*y + a;
             y = 2*x*y + b;
             x = xnext;
             mandel++;
         }
-        if(mandel > 1024)
+        if(mandel > 1023)
             mandel = 0;
         return mandel;
     }
