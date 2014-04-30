@@ -7,6 +7,9 @@ import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -58,18 +61,14 @@ public class MainWindow implements ActionListener{
         zoomPanel.setSize((int)WIDTH - insets.left - insets.right, 30 - insets.top - insets.bottom);
         zoomPanel.setLayout( new FlowLayout());
         zoomPanel.setBackground(Color.GRAY);
-        zoomPanel.setVisible(true);
         
         xcenter = new JTextField("0", 5);
-        xcenter.setVisible(true);
         zoomPanel.add(xcenter);
         
         ycenter = new JTextField("0", 5);
-        ycenter.setVisible(true);
         zoomPanel.add(ycenter);
         
         zoom = new JTextField("130", 5);
-        zoom.setVisible(true);
         zoomPanel.add(zoom);
         
         JButton zoomButton = new JButton("Apply");
@@ -123,4 +122,46 @@ public class MainWindow implements ActionListener{
         return filler;
     }
     
+    private class MouseHandler implements MouseListener, MouseMotionListener{
+
+        public MouseHandler(){
+
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e){
+
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e){
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e){
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e){
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e){
+
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e){
+
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e){
+
+        }
+
+    }
 }
