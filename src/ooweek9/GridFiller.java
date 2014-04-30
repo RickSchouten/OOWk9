@@ -7,7 +7,7 @@ package ooweek9;
  */
 
 /**
- * A skelton class illustrating the use of the grid interface
+ * A skeleton class illustrating the use of the grid interface
  * 
  */
 public class GridFiller {
@@ -16,7 +16,7 @@ public class GridFiller {
                                     // rgb values
     
     /**
-     * The constructur
+     * The constructor
      * @param grid to be filled
      */
     public GridFiller (Grid grid) {
@@ -25,8 +25,11 @@ public class GridFiller {
     }
 
     /**
-     * fills the whole grid with some arbitrarily chosen color
      * 
+     * @param xmid
+     * @param ymid
+     * @param xwidth
+     * @param ywidth 
      */
     public void fill (double xmid, double ymid, double xwidth, double ywidth) {
         double gridw = grid.getWidth(), gridh = grid.getHeight();

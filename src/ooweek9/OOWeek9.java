@@ -6,9 +6,6 @@
 
 package ooweek9;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
  *
  * @author hessel

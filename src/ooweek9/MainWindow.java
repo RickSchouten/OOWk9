@@ -1,7 +1,6 @@
 package ooweek9;
 
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -31,7 +30,7 @@ public class MainWindow implements ActionListener{
     private GridView grid;
     
     private GridFiller filler;
-    public JTextField xcenter, ycenter, zoom;
+    private JTextField xcenter, ycenter, zoom;
     
     public MainWindow () {
     	JFrame mainFrame = new JFrame ("Mandelbrot");
@@ -45,6 +44,10 @@ public class MainWindow implements ActionListener{
     	
         Insets insets = mainFrame.getInsets ();
         grid = new GridView ((int)WIDTH - insets.left - insets.right, (int)HEIGHT - insets.top - insets.bottom - 30);
+        
+        MouseHandler handler = new MouseHandler();
+        grid.addMouseListener(handler);
+        grid.addMouseMotionListener(handler);
         
         mainFrame.add(grid, BorderLayout.NORTH);
         
@@ -94,12 +97,10 @@ public class MainWindow implements ActionListener{
         for(int i = 0; i < s.length(); i++){
             if(dot == s.length()-1 || i != dot){
                 int charAt = s.charAt(i) - 48;
-                if(dot == s.length()-1)
+                if(dot == s.length()-1 || (dot != s.length()-1 && i > dot))
                     output += (double)charAt*power(10, dot - i);
                 else if(dot != s.length()-1 && i < dot)
                     output += (double)charAt*power(10, dot - i - 1);
-                else if(dot != s.length()-1 && i > dot)
-                    output += (double)charAt*power(10, dot - i);
             }
         }
         return output;

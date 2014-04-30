@@ -3,8 +3,6 @@ package ooweek9;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
-
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 /**
